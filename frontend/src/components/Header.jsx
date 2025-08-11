@@ -1,8 +1,10 @@
+import { Link, useNavigate } from "react-router-dom";
 import React, { useState } from 'react'
 import './Header.css'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const navigate=useNavigate();
 
   return (
     <header className="header">
@@ -21,8 +23,8 @@ const Header = () => {
           </div>
           
           <div className={`nav-menu ${isMenuOpen ? 'nav-menu-open' : ''}`}>
-            <a href="#home" className="nav-link active">Home</a>
-            <a href="#find-job" className="nav-link">Find Job</a>
+            <Link to="/home">Home</Link>
+           <Link to="/find-job">Find Job</Link>
             <a href="#employers" className="nav-link">Employers</a>
             <a href="#candidates" className="nav-link">Candidates</a>
             <a href="#blog" className="nav-link">Blog</a>
@@ -37,7 +39,7 @@ const Header = () => {
           <button 
             className="mobile-menu-btn"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
+          > shivam
             <span></span>
             <span></span>
             <span></span>
